@@ -9,6 +9,8 @@ import (
 	"time"
 )
 
+// var justString string - использование глобальной переменной плохая практика
+
 func someFunc() string {
 	v := createHugeString(1 << 10)
 
@@ -26,7 +28,7 @@ func main() {
 	defer ticker.Stop()
 
 	for {
-		var justString string
+		var justString string // локальная переменная
 
 		select {
 		case <-ctx.Done():
